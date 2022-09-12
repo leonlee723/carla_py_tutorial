@@ -54,7 +54,7 @@ def main():
         blueprints_vehicle = sorted(blueprints_vehicle, key=lambda bp: bp.id)
         # number_of_spawn_points = len(spawn_points)
         # nubmer_of_vehicles = number_of_spawn_points - 1
-        nubmer_of_vehicles = 50
+        nubmer_of_vehicles = 10
         
         # 默认端口8000
         traffic_manager = client.get_trafficmanager()
