@@ -160,12 +160,12 @@ def main():
         sensor_list.append(lidar)
         
         while True:
-            world.tick()
+            
             # set the sectator to follow the ego vehicle
             spectator = world.get_spectator()
             ego_spectator_transform = ego_actor.get_transform()
             spectator.set_transform(carla.Transform(ego_spectator_transform.location + carla.Location(z=20),carla.Rotation(pitch=-90)))
-            
+            world.tick()
             # As the queue is blocking, we will wait in the queue.get() methods until all the infomation is processed and 
             # we continue with the next frame.
             # try:
