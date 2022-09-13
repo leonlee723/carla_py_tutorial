@@ -45,7 +45,7 @@ def main():
         
         original_settings = world.get_settings()
         settings = world.get_settings()
-        settings.fixed_delta_seconds = 0.05 #20 fps, 5ms
+        settings.fixed_delta_seconds = 0.02 #25 fps, 4ms
         settings.synchronous_mode = True
         world.apply_settings(settings)
         
@@ -54,7 +54,7 @@ def main():
         blueprints_vehicle = sorted(blueprints_vehicle, key=lambda bp: bp.id)
         # number_of_spawn_points = len(spawn_points)
         # nubmer_of_vehicles = number_of_spawn_points - 1
-        nubmer_of_vehicles = 10
+        nubmer_of_vehicles = 50
         
         # 默认端口8000
         traffic_manager = client.get_trafficmanager()
@@ -64,7 +64,7 @@ def main():
         # tm里面的每一辆车都是混合物理模式
         traffic_manager.set_hybrid_physics_mode(True)
         # tm里面每一辆车都是默认速度的80%
-        traffic_manager.global_percentage_speed_difference(80)
+        traffic_manager.global_percentage_speed_difference(-50)
         
         SpawnActor = carla.command.SpawnActor
         SetAutopilot = carla.command.SetAutopilot
